@@ -7,8 +7,8 @@
 ## 팀 멤버
 |  | | | |
 |---|------|-------|---------|
-|   <img src = "https://avatars1.githubusercontent.com/u/4317641?s=460&u=8d90f1833f528e5a62e26b7f6af5c9868d2820af&v=4" width="128px;"/> <br/> [김찬란](https://github.com/seriousran) (빌더) <br/> NVIDIA <br/> 1기~ <br/>  <br/> |   |   |    |
-|   <img src = "https://avatars.githubusercontent.com/u/60315070?s=400&u=778854dfa9e806ceb1bc3e8d6cf30634df316c15&v=4" width="128px;"/> <br/> [박상호](https://www.linkedin.com/in/sangho-park-4220aa22a/) (빌더) <br/> 성균관대학교<br/> 7기~ <br/> Bridging Causal Inference <br/> and Real-World Evidence: <br/> A Study of FDA <br/> and Other Regulatory Guidelines <br/> |  |   |    |
+|   <img src = "https://avatars.githubusercontent.com/u/25517592?v=4" width="128px;"/> <br/> [이경찬](https://github.com/kyeongchan92) (빌더) <br/> 하나투어  |   |   |    |
+|    |  |   |    |
 
 ## 프로젝트 소개
 
