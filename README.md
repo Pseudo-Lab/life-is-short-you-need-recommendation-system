@@ -7,7 +7,7 @@
 ## 팀 멤버
 |  | | | |
 |---|------|-------|---------|
-|   <img src = "https://avatars.githubusercontent.com/u/25517592?v=4" width="128px;"/> <br/> [이경찬](https://github.com/kyeongchan92) (빌더) <br/> 하나투어  |   |   |    |
+|   <img src = "https://avatars.githubusercontent.com/u/25517592?v=4" width="128px;"/> <br/> [이경찬](https://github.com/kyeongchan92) (빌더) <br/> 하나투어  |  ![namjoon_380x590](https://github.com/user-attachments/assets/2d8f46c8-f9ad-46c9-a38e-40bedbd327bf) |   |    |
 |    |  |   |    |
 
 ## 프로젝트 소개
