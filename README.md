@@ -8,7 +8,7 @@
 |    |  |   |    |
 |---|------|-------|---------|
 |   <img src = "https://github.com/user-attachments/assets/5567869c-f388-48bf-a023-f3593adee756" width="128px;"/> <br/> [이경찬](https://github.com/kyeongchan92) (빌더)  |  <img src = "https://github.com/user-attachments/assets/2d8f46c8-f9ad-46c9-a38e-40bedbd327bf" width="128px;"/> <br/> [이남준](https://github.com/dlskawns) (러너)  | <img src = "https://github.com/user-attachments/assets/89dcbbbc-0929-4f58-b6a9-c8db5f6825a1" width="128px;"/> <br/> [남궁민상](https://github.com/wholmesian) (러너)  |  <img src = "https://github.com/user-attachments/assets/ac295666-9ef3-4386-8f7e-5bd64b4ad40c" width="128px;"/> <br/> [박순혁](https://github.com/soonhp) (러너)  |
-|  <img src = "https://github.com/user-attachments/assets/27506c46-2ade-42bb-95df-e9041f2f5c42" width="128px;"/> <br/> [조경아](https://github.com/Choah) (러너)  |  <img src = "https://github.com/user-attachments/assets/28fade68-faf6-43c6-9ead-50b9e54311d2" width="128px;"/> <br/> [김현우](https://github.com/choco9966) (러너)|  <img src = "" width="128px;"/> <br/> [이상현]() (러너) |  <img src = "" width="128px;"/> <br/> [황선민]() (러너)  |
+|  <img src = "https://github.com/user-attachments/assets/27506c46-2ade-42bb-95df-e9041f2f5c42" width="128px;"/> <br/> [조경아](https://github.com/Choah) (러너)  |  <img src = "https://github.com/user-attachments/assets/28fade68-faf6-43c6-9ead-50b9e54311d2" width="128px;"/> <br/> [김현우](https://github.com/choco9966) (러너)|  <img src = "" width="128px;"/> <br/> [이상현]() (러너) |  <img src = "" width="128px;"/> <br/> [황선진]() (러너)  |
 
 ## 프로젝트 소개
 
