@@ -1,8 +1,6 @@
-# 9th-template
-9기 아카데미 프로젝트를 위한 템플릿입니다.
+# Life is short, You need Recommendation system
 
-## 프로젝트 소개
-- 내용
+정말 그렇게 생각합니다.
 
 ## 팀 멤버
 |    |  |   |    |
