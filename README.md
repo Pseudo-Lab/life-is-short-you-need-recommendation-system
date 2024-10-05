@@ -27,7 +27,7 @@
 | &#9745;   | 2024/09/14 | [1주차]OT (스터디 소개, 방향 논의, Ice breaking, 관심분야 소개) | 이경찬 |  
 |&#9745;  | 2024/09/21 | [2주차][논문 리뷰 : Large Language Models are Zero-Shot Rankers for Recommender Systems](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/4#discussion-7201636) | 발표자1, 발표자2 | 
 |&#9745; | 2024/09/28 | [3주차]월간슈도렉 9월호 리뷰 | 전체 |  
-|&#9744; | 2024/10/05 | [4주차][논문 리뷰 : A Survey of Large Language Models for Graphs](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/9) | 박순혁, 황선진 |  
+|&#9745; | 2024/10/05 | [4주차][논문 리뷰 : A Survey of Large Language Models for Graphs](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/9) | 박순혁, 황선진 |  
 |&#9744; | 2024/10/12 | [5주차]논문 리뷰 | 발표자1, 발표자2 |  
 |&#9744; | 2024/10/19 | [6주차]논문 리뷰 | 발표자1, 발표자2 |  
 |&#9744; | 2024/10/26 | [7주차]월간슈도렉 10월호 리뷰 | 전체 |  
