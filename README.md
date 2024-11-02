@@ -28,11 +28,11 @@
 |&#9745;  | 2024/09/21 | [2주차][논문 리뷰 : Large Language Models are Zero-Shot Rankers for Recommender Systems](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/4#discussion-7201636) | 이경찬, 이남준 | 
 |&#9745; | 2024/09/28 | [3주차]월간슈도렉 9월호 리뷰 | 전체 |  
 |&#9745; | 2024/10/05 | [4주차][논문 리뷰 : A Survey of Large Language Models for Graphs](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/9) | 박순혁, 황선진 |  
-|&#9745; | 2024/10/12 | [5주차]논문 리뷰 | 이남준, 김현우 |  
+|&#9745; | 2024/10/12 | [5주차][논문 리뷰 : A Large Language Model Enhanced Conversational Recommender System](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/15) | 이남준, 김현우 |  
 |&#9745; | 2024/10/19 | [6주차] 빅콘테스트 공유| 빅콘테스트 공유로 인한 논문 리뷰 패스 |  
-|&#9745; | 2024/10/26 | [7주차]논문 리뷰| 조경아, 남궁민상 |  
-|&#9744; | 2024/11/02 | [8주차]논문 리뷰 & 월간슈도렉 10월호 리뷰 | 남궁민상, 이상현 |  
-|&#9744; | 2024/11/09 | [9주차]논문 리뷰 | 이상현, 이경찬 |  
+|&#9745; | 2024/10/26 | [7주차][논문 리뷰 : Seven Failure Points When Engineering a Retrieval Augmented Generation System](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/17)| 조경아, 남궁민상 |  
+|&#9745; | 2024/11/02 | [8주차][논문 리뷰 : HalluMeasure: Fine-grained Hallucination Measurement Using Chain-of-Thought Reasoning](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/18) | 남궁민상, 이상현 |  
+|&#9744; | 2024/11/09 | [9주차]논문 리뷰 & 월간슈도렉 10월호 리뷰 | 이상현, 이경찬 |  
 |&#9744; | 2024/11/16 | [10주차]논문 리뷰 | 황선진, 박순혁 |  
 |&#9744; | 2024/11/23 | [11주차] (슈도콘) 논문 리뷰 | 김현우, 조경아 |  
 |&#9744; | 2024/11/30 | [12주차]월간슈도렉 11월호 리뷰 | 전체 |  
