@@ -33,8 +33,8 @@
 |&#9745; | 2024/10/26 | [7주차][논문 리뷰 : Seven Failure Points When Engineering a Retrieval Augmented Generation System](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/17)| 조경아, 남궁민상 |  
 |&#9745; | 2024/11/02 | [8주차][논문 리뷰 : HalluMeasure: Fine-grained Hallucination Measurement Using Chain-of-Thought Reasoning](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/18) | 남궁민상, 이상현 |  
 |&#9745; | 2024/11/09 | [9주차][논문 리뷰 : Addressing Confounding Feature Issue for Causal Recommendation](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/19) & 월간슈도렉 10월호 리뷰 | 이상현, 이경찬 |  
-|&#9744; | 2024/11/16 | [10주차]논문 리뷰 | 황선진, 박순혁 |  
-|&#9744; | 2024/11/23 | [11주차] 1st Grand Gathering | 전체 |  
+|&#9745; | 2024/11/16 | [10주차][논문 리뷰 : ONCE: Boosting Content-based Recommendation with Both Open- and Closed-source Large Language Models](https://github.com/Pseudo-Lab/life-is-short-you-need-recommendation-system/discussions/21) | 황선진, 박순혁 |  
+|&#9744; | 2024/11/23 | [11주차] Sudo Pseudo Explorer(1st Grand Gathering) 행사 | 전체 |  
 |&#9744; | 2024/11/30 | [12주차]논문 리뷰 & 월간슈도렉 11월호 리뷰 | 김현우, 조경아 |  
 |&#9744; | 2024/12/07 | [13주차]논문 구현 | 발표자1, 발표자2 |  
 |&#9744; | 2024/12/14 | [14주차]논문 구현 | 발표자1, 발표자2 |  
