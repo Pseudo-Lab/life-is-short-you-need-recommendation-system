@@ -21,7 +21,7 @@
 추천시스템 논문을 읽고 토론하고 작성합니다.
 - [PseudoRec](https://www.pseudorec.com/archive/monthly_pseudorec/) 사이트에 월 1회 추천시스템 관련 포스팅 '월간슈도렉'을 게재합니다.
   - PseudoRec : 7기부터 만들어온(2023.9~) 다양한 추천 모델 구현 & 비교 사이트
-- Demonstration 논문 억셉시키기!
+- Demonstration 논문 억셉시키기!-> 논문 리뷰 등의 활동 구체화 필요
 - LLM을 활용한 추천시스템에 관심이 많습니다! 관련 논문을 읽고, 정리하고, 토론합니다!
 
 
