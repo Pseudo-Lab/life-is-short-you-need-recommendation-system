@@ -57,11 +57,11 @@
  
 나날이 발전하고 있는 추천시스템 분야를 깊이, 그리고 빠르게 팔로업하기 위한 저희의 스터디는 계속됩니다.💪
 
-## 🚀 프로젝트 로드맵 (Project Roadmap) (작성중)
+## 🚀 프로젝트 로드맵 (Project Roadmap)
 ```mermaid
 gantt
     title 2025 ListenRS의 로드맵
-    section 핵심 마일스톤
+    section 논문 작성
       Ideation       :a1, 2025-02-22, 60d
       MVP 개발        :a2, after a1, 45d
       논문 작성        :a3, after a1, 90d
