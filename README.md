@@ -32,16 +32,10 @@
 
 ## 🧑 역동적인 팀 소개 (Dynamic Team)
 
-| 역할          | 이름 |  기술 스택 배지                                                                 | 주요 관심 분야                          |
-|---------------|------|-----------------------------------------------------------------------|----------------------------------------|
-| **Project Manager** | 이경찬 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / MLOps / LLM / Agent |
-| **Member** | 이남준 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 남궁민상 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 박순혁 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 조경아 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 김현우 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 이상현 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
-| **Member** | 황선진 | ![Python](https://img.shields.io/badge/Python-Expert-3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C) | 추천시스템 / LLM |
+|    |  |   |    |
+|---|------|-------|---------|
+|   <img src = "https://github.com/user-attachments/assets/5567869c-f388-48bf-a023-f3593adee756" width="128px;"/> <br/> [이경찬](https://github.com/kyeongchan92) (빌더)  |  <img src = "https://github.com/user-attachments/assets/2d8f46c8-f9ad-46c9-a38e-40bedbd327bf" width="128px;"/> <br/> [이남준](https://github.com/dlskawns) (러너)  | <img src = "https://github.com/user-attachments/assets/89dcbbbc-0929-4f58-b6a9-c8db5f6825a1" width="128px;"/> <br/> [남궁민상](https://github.com/wholmesian) (러너)  |  <img src = "https://github.com/user-attachments/assets/ac295666-9ef3-4386-8f7e-5bd64b4ad40c" width="128px;"/> <br/> [박순혁](https://github.com/soonhp) (러너)  |
+|  <img src = "https://github.com/user-attachments/assets/27506c46-2ade-42bb-95df-e9041f2f5c42" width="128px;"/> <br/> [조경아](https://github.com/Choah) (러너)  |  <img src = "https://github.com/user-attachments/assets/28fade68-faf6-43c6-9ead-50b9e54311d2" width="128px;"/> <br/> [김현우](https://github.com/choco9966) (러너)|  <img src = "https://github.com/user-attachments/assets/7dc4a50d-223d-423a-81b0-9c709aeda250" width="128px;"/> <br/> [이상현](https://github.com/Sanghyeon16) (러너) |  <img src = "https://github.com/user-attachments/assets/532ccee7-c021-41f6-8bac-f9a5e0880556" width="128px;"/> <br/> [황선진](https://github.com/passiona2z) (러너)  |
 
 안녕하세요!👋 저희는 가짜연구소에서 추천시스템을 연구하는 'Life is short, You need Recommendation System', 줄여서 ListenRS 팀입니다! 가짜연구소에서 추천시스템 스터디로서 6기부터 활동해왔으니까, 현재 시점(2025.2) 기준으로 벌써 2년이 되었습니다. 지난 시즌동안 했던 내용을 간략히 정리하자면 아래와 같습니다!
 
@@ -66,14 +60,24 @@
 ## 🚀 프로젝트 로드맵 (Project Roadmap) (작성중)
 ```mermaid
 gantt
-    title 2025 AI 프로젝트 여정
+    title 2025 ListenRS의 로드맵
     section 핵심 마일스톤
-    이론 연구       :a1, 2025-09-01, 30d
-    MVP 개발        :a2, after a1, 45d
-    프로덕션 적용    :a3, after a2, 30d
-    section 부가 활동
-    기술 세미나     :2025-10-15, 7d
-    해커톤         :2025-11-20, 3d
+      Ideation       :a1, 2025-02-22, 60d
+      MVP 개발        :a2, after a1, 45d
+      논문 작성        :a3, after a1, 90d
+    section 월간슈도렉 작성
+      월슈 1월호 작성       :m1, 2025-01-01, 30d
+      월슈 2월호 작성       :m2, 2025-02-01, 30d
+      월슈 3월호 작성       :m3, 2025-03-01, 30d
+      월슈 4월호 작성       :m4, 2025-04-01, 30d
+      월슈 5월호 작성       :m5, 2025-05-01, 30d
+      월슈 6월호 작성       :m6, 2025-06-01, 30d
+      월슈 7월호 작성       :m7, 2025-07-01, 30d
+
+    section 가짜연구소 행사
+      Magical Week 1    :2025-03-22, 7d
+      Magical Week 2    :2025-04-27, 7d
+      PseudoCon         :2025-5-17, 1d
 ```
 
 
