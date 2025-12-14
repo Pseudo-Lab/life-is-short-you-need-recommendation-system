@@ -138,7 +138,7 @@ class CollaborationFramework:
 **누구나 청강을 통해 모임을 참여하실 수 있습니다.**  
 1. 특별한 신청 없이 정기 모임 시간(매주 토요일 10:00)에 맞추어 디스코드 #Room-YL 채널로 입장
 2. Magical Week 중 행사에 참가
-3. Pseudo Lab 행사에서 만나기
+3. Pseudo Lab 행사에서 만나기 
 
 ## Acknowledgement 🙏
 
