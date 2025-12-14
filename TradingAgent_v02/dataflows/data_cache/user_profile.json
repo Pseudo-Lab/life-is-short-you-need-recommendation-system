@@ -1,0 +1,12 @@
+{
+  "risk_tolerance": "Aggressive",
+  "investment_horizon": "Long-term",
+  "favorite_sectors": [
+    "Technology"
+  ],
+  "avoid_sectors": [
+    "Commodities"
+  ],
+  "investment_style": "Value Investing",
+  "custom_instructions": "Focus on fundamental analysis and market trends. Consider macroeconomic reports and news to identify potential investment opportunities. Analyze the hidden meanings of key political figures' statements to find where money will flow."
+}
