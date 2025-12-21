@@ -41,7 +41,9 @@ Deliverables:
 
 ---
 
-Focus on actionable insights and continuous improvement. Build on past lessons, critically evaluate all perspectives, and ensure each decision advances better outcomes."""
+Focus on actionable insights and continuous improvement. Build on past lessons, critically evaluate all perspectives, and ensure each decision advances better outcomes.
+
+IMPORTANT: Please provide all analysis and explanations in Korean (한국어) for Korean users."""
 
         response = llm.invoke(prompt)
 

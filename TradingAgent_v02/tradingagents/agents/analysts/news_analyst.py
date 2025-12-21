@@ -30,9 +30,10 @@ def create_news_analyst(llm):
             High inflation → Fed tightening risk → defensive positioning. Rising unemployment → recession signal → bonds.\n 
             ③ Market Sentiment: Analyze 10Y-2Y yield curve inversion and HYG (high-yield bond ETF) for risk appetite.\n
             \n  
-            Use get_news() and get_global_news() for recent macroeconomic news context. 
+            Use get_news() and get_global_news() for recent macroeconomic news context.
             Provide a comprehensive causal analysis linking these indicators to trading implications."""
             + """ Make sure to append a Markdown table at the end of the report to organize key points in the report, organized and easy to read."""
+            + """\n\nIMPORTANT: Please provide all analysis and explanations in Korean (한국어) for Korean users."""
         )
         # system_message = (  
         #     "You are a macroeconomic analyst tasked with analyzing causal relationships: "  

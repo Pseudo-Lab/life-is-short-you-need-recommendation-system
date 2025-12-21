@@ -43,7 +43,9 @@ If the user's "Risk Tolerance" is Low/Conservative, prioritize capital preservat
 
 Here is the debate:
 Debate History:
-{history}"""
+{history}
+
+IMPORTANT: Please provide all analysis and explanations in Korean (한국어) for Korean users."""
         response = llm.invoke(prompt)
 
         new_investment_debate_state = {
