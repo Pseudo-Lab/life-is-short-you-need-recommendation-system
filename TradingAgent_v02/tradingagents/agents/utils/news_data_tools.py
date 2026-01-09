@@ -18,7 +18,13 @@ def get_news(
     Returns:
         str: A formatted string containing news data
     """
-    return route_to_vendor("get_news", ticker, start_date, end_date)
+    print(f"[GET_NEWS] ====== get_news() 함수 시작 ======")
+    print(f"[GET_NEWS] 입력 파라미터: ticker={ticker}, start_date={start_date}, end_date={end_date}")
+    print(f"[GET_NEWS] route_to_vendor() 호출 예정...")
+    result = route_to_vendor("get_news", ticker, start_date, end_date)
+    print(f"[GET_NEWS] route_to_vendor() 완료, 결과 타입: {type(result)}, 길이: {len(str(result)) if result else 0}")
+    print(f"[GET_NEWS] ====== get_news() 함수 종료 ======")
+    return result
 
 @tool
 def get_global_news(

@@ -140,8 +140,12 @@ def get_vendor(category: str, method: str = None) -> str:
 
 def route_to_vendor(method: str, *args, **kwargs):
     """Route method calls to appropriate vendor implementation with fallback support."""
+    print(f"[ROUTE_TO_VENDOR] ====== route_to_vendor() 함수 시작 ======")
+    print(f"[ROUTE_TO_VENDOR] method={method}, args={args}, kwargs={kwargs}")
     category = get_category_for_method(method)
+    print(f"[ROUTE_TO_VENDOR] category={category}")
     vendor_config = get_vendor(category, method)
+    print(f"[ROUTE_TO_VENDOR] vendor_config={vendor_config}")
 
     # Handle comma-separated vendors
     primary_vendors = [v.strip() for v in vendor_config.split(',')]
@@ -237,8 +241,12 @@ def route_to_vendor(method: str, *args, **kwargs):
         print(f"FINAL: Method '{method}' completed with {len(results)} result(s) from {vendor_attempt_count} vendor attempt(s)")
 
     # Return single result if only one, otherwise concatenate as string
+    print(f"[ROUTE_TO_VENDOR] 최종 결과 반환 준비: results 개수={len(results)}")
     if len(results) == 1:
+        print(f"[ROUTE_TO_VENDOR] ====== route_to_vendor() 함수 종료 (단일 결과 반환) ======")
         return results[0]
     else:
         # Convert all results to strings and concatenate
-        return '\n'.join(str(result) for result in results)
+        concatenated = '\n'.join(str(result) for result in results)
+        print(f"[ROUTE_TO_VENDOR] ====== route_to_vendor() 함수 종료 (복수 결과 연결 반환, 길이={len(concatenated)}) ======")
+        return concatenated

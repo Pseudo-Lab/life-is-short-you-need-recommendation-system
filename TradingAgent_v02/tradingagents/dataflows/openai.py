@@ -3,8 +3,12 @@ from .config import get_config
 
 
 def get_stock_news_openai(query, start_date, end_date):
+    print(f"[OPENAI_NEWS] ====== get_stock_news_openai() 함수 시작 ======")
+    print(f"[OPENAI_NEWS] 입력: query={query}, start_date={start_date}, end_date={end_date}")
     config = get_config()
+    print(f"[OPENAI_NEWS] OpenAI 클라이언트 생성 중...")
     client = OpenAI(base_url=config["backend_url"])
+    print(f"[OPENAI_NEWS] OpenAI API 호출 예정 (responses.create)...")
 
     response = client.responses.create(
         model=config["quick_think_llm"],
@@ -33,8 +37,11 @@ def get_stock_news_openai(query, start_date, end_date):
         top_p=1,
         store=True,
     )
-
-    return response.output[1].content[0].text
+    print(f"[OPENAI_NEWS] OpenAI API 응답 수신 완료")
+    result = response.output[1].content[0].text
+    print(f"[OPENAI_NEWS] 결과 추출 완료, 길이: {len(result) if result else 0}")
+    print(f"[OPENAI_NEWS] ====== get_stock_news_openai() 함수 종료 ======")
+    return result
 
 
 def get_global_news_openai(curr_date, look_back_days=7, limit=5):

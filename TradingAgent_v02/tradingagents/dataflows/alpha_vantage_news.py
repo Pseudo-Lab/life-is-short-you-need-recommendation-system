@@ -13,6 +13,8 @@ def get_news(ticker, start_date, end_date) -> dict[str, str] | str:
     Returns:
         Dictionary containing news sentiment data or JSON string.
     """
+    print(f"[ALPHA_VANTAGE_NEWS] ====== get_news() 함수 시작 (Alpha Vantage) ======")
+    print(f"[ALPHA_VANTAGE_NEWS] 입력: ticker={ticker}, start_date={start_date}, end_date={end_date}")
 
     params = {
         "tickers": ticker,
@@ -21,8 +23,13 @@ def get_news(ticker, start_date, end_date) -> dict[str, str] | str:
         "sort": "LATEST",
         "limit": "50",
     }
+    print(f"[ALPHA_VANTAGE_NEWS] API 파라미터: {params}")
+    print(f"[ALPHA_VANTAGE_NEWS] _make_api_request('NEWS_SENTIMENT', ...) 호출 예정...")
     
-    return _make_api_request("NEWS_SENTIMENT", params)
+    result = _make_api_request("NEWS_SENTIMENT", params)
+    print(f"[ALPHA_VANTAGE_NEWS] API 요청 완료, 결과 타입: {type(result)}")
+    print(f"[ALPHA_VANTAGE_NEWS] ====== get_news() 함수 종료 (Alpha Vantage) ======")
+    return result
 
 def get_insider_transactions(symbol: str) -> dict[str, str] | str:
     """Returns latest and historical insider transactions by key stakeholders.

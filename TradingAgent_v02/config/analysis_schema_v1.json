@@ -1,0 +1,134 @@
+{
+  "version": "analysis_schema_v1.0.0",
+  "schemas": {
+    "Banks_v1": {
+      "id": "Banks_v1",
+      "required_metrics": ["NIM", "NPL_ratio", "CET1", "ROE", "deposit_growth"],
+      "valuation_frames": ["P/TBV", "P/E", "ROE_vs_CoE"],
+      "risk_factors": ["credit_loss_cycle", "deposit_beta", "duration_risk", "regulatory_capital"],
+      "event_watchlist": ["earnings", "fed_rate_decision", "stress_test", "regulation"],
+      "invalidation_triggers": ["credit_costs_spike", "deposit_run_signal", "capital_ratio_drop"],
+      "data_requirements": {
+        "financials": true,
+        "prices": true,
+        "macro": true,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": [
+        "최근 금리/커브 변화가 NIM에 미치는 영향은?",
+        "신용비용(대손충당금/연체) 사이클은 어디에 있는가?",
+        "예금 조달비용/베타 상승 징후는 있는가?"
+      ]
+    },
+    "REIT_v1": {
+      "id": "REIT_v1",
+      "required_metrics": ["FFO", "NOI", "occupancy", "leverage", "interest_coverage"],
+      "valuation_frames": ["P/FFO", "cap_rate_spread", "NAV_discount_premium"],
+      "risk_factors": ["rate_sensitivity", "tenant_concentration", "refinancing_risk"],
+      "event_watchlist": ["earnings", "rate_decision", "refinancing", "lease_renewal"],
+      "invalidation_triggers": ["occupancy_drop", "refi_cost_jump", "tenant_default"],
+      "data_requirements": {
+        "financials": true,
+        "prices": true,
+        "macro": true,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": [
+        "금리 상승/하락이 cap rate와 밸류에이션에 주는 영향은?",
+        "임대료/점유율/NOI 트렌드는 어떤가?",
+        "만기 구조와 리파이낸싱 리스크는?"
+      ]
+    },
+    "Energy_EP_v1": {
+      "id": "Energy_EP_v1",
+      "required_metrics": ["production_growth", "lifting_cost", "capex", "free_cash_flow", "reserve_life"],
+      "valuation_frames": ["EV/EBITDA", "FCF_yield", "NAV"],
+      "risk_factors": ["commodity_price_volatility", "geopolitics", "regulation", "execution_risk"],
+      "event_watchlist": ["OPEC", "earnings", "inventory_report", "regulation"],
+      "invalidation_triggers": ["production_miss", "cost_inflation", "price_crash"],
+      "data_requirements": {
+        "financials": true,
+        "prices": true,
+        "macro": true,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": [
+        "WTI/Brent 변화가 현금흐름에 미치는 민감도는?",
+        "생산/Capex 가이던스 대비 실행력은?",
+        "OPEC/지정학 리스크가 단기 이벤트로 작동하는가?"
+      ]
+    },
+    "SaaS_v1": {
+      "id": "SaaS_v1",
+      "required_metrics": ["ARR", "NRR", "gross_margin", "opex_ratio", "free_cash_flow_margin"],
+      "valuation_frames": ["EV/Sales", "Rule_of_40", "growth_vs_margin"],
+      "risk_factors": ["demand_slowdown", "pricing_pressure", "competition", "security_incident"],
+      "event_watchlist": ["earnings", "guidance", "product_launch", "security"],
+      "invalidation_triggers": ["NRR_drop", "guidance_cut", "security_breach"],
+      "data_requirements": {
+        "financials": true,
+        "prices": true,
+        "macro": false,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": [
+        "성장률과 마진(또는 FCF)이 동시에 개선되는가?",
+        "NRR/이탈(churn)에서 약화 신호가 있는가?",
+        "경쟁/가격 압력으로 인한 가이던스 리스크는?"
+      ]
+    },
+    "Biotech_v1": {
+      "id": "Biotech_v1",
+      "required_metrics": ["cash_runway_months", "pipeline_milestones", "trial_phase", "regulatory_timeline"],
+      "valuation_frames": ["risk_adjusted_NPV", "peer_multiple", "cash_runway"],
+      "risk_factors": ["clinical_failure", "regulatory_delay", "financing_risk"],
+      "event_watchlist": ["FDA", "trial_readout", "conference", "earnings"],
+      "invalidation_triggers": ["trial_negative", "FDA_hold", "dilution_risk_spike"],
+      "data_requirements": {
+        "financials": false,
+        "prices": true,
+        "macro": false,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": [
+        "가장 가까운 촉매(catalyst)는 무엇이며 타임라인은?",
+        "임상 결과/규제 리스크의 핵심 불확실성은?",
+        "현금 런웨이와 자금조달(희석) 리스크는?"
+      ]
+    },
+    "Default_v1": {
+      "id": "Default_v1",
+      "required_metrics": [],
+      "valuation_frames": [],
+      "risk_factors": [],
+      "event_watchlist": [],
+      "invalidation_triggers": [],
+      "data_requirements": {
+        "financials": false,
+        "prices": false,
+        "macro": false,
+        "filings": false,
+        "news": true
+      },
+      "analysis_questions": []
+    }
+  },
+  "domain_to_schema": {
+    "Banks": "Banks_v1",
+    "REIT": "REIT_v1",
+    "Energy_EP": "Energy_EP_v1",
+    "SaaS": "SaaS_v1",
+    "Biotech": "Biotech_v1",
+    "Others": "Default_v1"
+  }
+}
+
+
+
+
+

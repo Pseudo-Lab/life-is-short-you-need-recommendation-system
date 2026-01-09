@@ -98,10 +98,15 @@ def get_finnhub_news(
         str: dataframe containing the news of the company in the time frame
 
     """
+    print(f"[FINNHUB_NEWS] ====== get_finnhub_news() 함수 시작 ======")
+    print(f"[FINNHUB_NEWS] 입력: query={query}, start_date={start_date}, end_date={end_date}")
+    print(f"[FINNHUB_NEWS] get_data_in_range() 호출 예정...")
 
     result = get_data_in_range(query, start_date, end_date, "news_data", DATA_DIR)
+    print(f"[FINNHUB_NEWS] get_data_in_range() 완료, 결과 개수: {len(result)}")
 
     if len(result) == 0:
+        print(f"[FINNHUB_NEWS] ====== get_finnhub_news() 함수 종료 (결과 없음) ======")
         return ""
 
     combined_result = ""
@@ -114,7 +119,10 @@ def get_finnhub_news(
             )
             combined_result += current_news + "\n\n"
 
-    return f"## {query} News, from {start_date} to {end_date}:\n" + str(combined_result)
+    final_result = f"## {query} News, from {start_date} to {end_date}:\n" + str(combined_result)
+    print(f"[FINNHUB_NEWS] 결과 문자열 생성 완료, 길이: {len(final_result)}")
+    print(f"[FINNHUB_NEWS] ====== get_finnhub_news() 함수 종료 ======")
+    return final_result
 
 
 def get_finnhub_company_insider_sentiment(
@@ -432,6 +440,8 @@ def get_reddit_company_news(
     Returns:
         str: A formatted string containing news articles posts on reddit
     """
+    print(f"[REDDIT_NEWS] ====== get_reddit_company_news() 함수 시작 ======")
+    print(f"[REDDIT_NEWS] 입력: query={query}, start_date={start_date}, end_date={end_date}")
 
     start_date_dt = datetime.strptime(start_date, "%Y-%m-%d")
     end_date_dt = datetime.strptime(end_date, "%Y-%m-%d")
@@ -441,6 +451,7 @@ def get_reddit_company_news(
     curr_date = start_date_dt
 
     total_iterations = (end_date_dt - curr_date).days + 1
+    print(f"[REDDIT_NEWS] 날짜 범위: {start_date} ~ {end_date} ({total_iterations}일)")
     pbar = tqdm(
         desc=f"Getting Company News for {query} from {start_date} to {end_date}",
         total=total_iterations,
@@ -461,8 +472,10 @@ def get_reddit_company_news(
         pbar.update(1)
 
     pbar.close()
+    print(f"[REDDIT_NEWS] fetch_top_from_category() 완료, 총 포스트 수: {len(posts)}")
 
     if len(posts) == 0:
+        print(f"[REDDIT_NEWS] ====== get_reddit_company_news() 함수 종료 (결과 없음) ======")
         return ""
 
     news_str = ""
@@ -472,4 +485,7 @@ def get_reddit_company_news(
         else:
             news_str += f"### {post['title']}\n\n{post['content']}\n\n"
 
-    return f"##{query} News Reddit, from {start_date} to {end_date}:\n\n{news_str}"
+    result = f"##{query} News Reddit, from {start_date} to {end_date}:\n\n{news_str}"
+    print(f"[REDDIT_NEWS] 결과 문자열 생성 완료, 길이: {len(result)}")
+    print(f"[REDDIT_NEWS] ====== get_reddit_company_news() 함수 종료 ======")
+    return result

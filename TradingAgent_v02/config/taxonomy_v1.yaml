@@ -1,0 +1,70 @@
+version: taxonomy_v1.0.0
+asset_type_fallback: Equity
+
+domain_categories:
+  Banks:
+    tickers: [JPM, BAC, WFC, C, GS, MS]
+    keywords:
+      [bank, nim, net interest margin, credit loss, loan, deposit, fed, rate]
+  Insurance:
+    tickers: [AIG, MET, PRU, TRV]
+    keywords:
+      [
+        insurance,
+        underwriting,
+        claims,
+        premium,
+        reinsurance,
+        combined ratio,
+        catastrophe,
+      ]
+  REIT:
+    tickers: [O, PLD, AMT, SPG, EQIX]
+    keywords: [reit, ffo, noi, occupancy, cap rate, lease, tenant]
+  Energy_EP:
+    tickers: [XOM, CVX, COP, EOG]
+    keywords: [oil, gas, upstream, e&p, drilling, production, opec, brent, wti]
+  SaaS:
+    tickers: [CRM, NOW, SNOW, ADBE]
+    keywords: [saas, subscription, arr, nrr, seat, cloud, enterprise software]
+  Biotech:
+    tickers: [MRNA, REGN, VRTX, BNTX]
+    keywords: [fda, trial, phase, clinical, pdufa, approval, biotech]
+  Utilities:
+    tickers: [NEE, DUK, SO, EXC]
+    keywords:
+      [utility, regulated, rate base, transmission, distribution, grid, power]
+  Semis:
+    tickers: [NVDA, AMD, TSM, INTC, ASML]
+    keywords: [semiconductor, wafer, foundry, fab, node, gpu, chip, silicon]
+  Consumer:
+    tickers: [PG, KO, MCD, COST, WMT]
+    keywords: [consumer, retail, demand, brand, loyalty, store traffic, pricing]
+  Industrials:
+    tickers: [CAT, BA, UPS, DE, LMT]
+    keywords:
+      [
+        industrial,
+        aerospace,
+        defense,
+        logistics,
+        manufacturing,
+        backlog,
+        orders,
+      ]
+  Materials:
+    tickers: [LIN, SHW, NUE, FCX]
+    keywords: [materials, mining, metals, chemicals, steel, copper, commodity]
+  Telecom:
+    tickers: [VZ, T, TMUS]
+    keywords: [telecom, wireless, broadband, spectrum, 5g, carrier]
+  Others:
+    tickers: []
+    keywords: [diversified, conglomerate, multi-sector]
+
+ticker_domain_overrides:
+  O: REIT
+  JPM: Banks
+  XOM: Energy_EP
+  CRM: SaaS
+  MRNA: Biotech

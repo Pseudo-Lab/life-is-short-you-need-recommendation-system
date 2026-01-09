@@ -11,6 +11,28 @@ def create_news_analyst(llm):
     def news_analyst_node(state):
         current_date = state["trade_date"]
         ticker = state["company_of_interest"]
+        domain = state.get("domain_category", "Unknown")
+        schema_id = state.get("analysis_schema_id", "Unknown")
+        analysis_schema = state.get("analysis_schema") or {}
+        analysis_questions = analysis_schema.get("analysis_questions", [])
+        news_bundle = state.get("news_bundle") or {}
+        company_cards = news_bundle.get("company_news_cards", [])
+        macro_cards = news_bundle.get("macro_news_cards", [])
+
+        def _fmt_cards(cards, label):
+            lines = []
+            for c in cards:
+                lines.append(
+                    f"- [{label}] {c.get('title','')[:120]} | src={c.get('source','')} | score={c.get('relevance_score','')}, event={c.get('event_label','')}"
+                )
+            return "\n".join(lines) if lines else "- (none)"
+
+        context_block = (
+            f"[Category] asset_type={state.get('asset_type','')} domain={domain} schema={schema_id}\n"
+            f"[Schema Questions] " + ("; ".join(analysis_questions) if analysis_questions else "(none)") + "\n"
+            f"[Top Company News]\n{_fmt_cards(company_cards, 'company')}\n"
+            f"[Top Macro News]\n{_fmt_cards(macro_cards, 'macro')}"
+        )
 
         tools = [
             get_news,
@@ -61,7 +83,8 @@ def create_news_analyst(llm):
                     " If you or any other assistant has the FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** or deliverable,"
                     " prefix your response with FINAL TRANSACTION PROPOSAL: **BUY/HOLD/SELL** so the team knows to stop."
                     " You have access to the following tools: {tool_names}.\n{system_message}"
-                    "For your reference, the current date is {current_date}. We are looking at the company {ticker}",
+                    "For your reference, the current date is {current_date}. We are looking at the company {ticker}."
+                    "\n\n[Context Preloaded]\n{context_block}",
                 ),
                 MessagesPlaceholder(variable_name="messages"),
             ]
@@ -71,6 +94,7 @@ def create_news_analyst(llm):
         prompt = prompt.partial(tool_names=", ".join([tool.name for tool in tools]))
         prompt = prompt.partial(current_date=current_date)
         prompt = prompt.partial(ticker=ticker)
+        prompt = prompt.partial(context_block=context_block)
 
         chain = prompt | llm.bind_tools(tools)
         result = chain.invoke(state["messages"])

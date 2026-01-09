@@ -1,4 +1,4 @@
-from typing import Annotated, Sequence
+from typing import Annotated, Any
 from datetime import date, timedelta, datetime
 from typing_extensions import TypedDict, Optional
 from langchain_openai import ChatOpenAI
@@ -50,6 +50,17 @@ class RiskDebateState(TypedDict):
 class AgentState(MessagesState):
     company_of_interest: Annotated[str, "Company that we are interested in trading"]
     trade_date: Annotated[str, "What date we are trading at"]
+    run_id: Annotated[str, "Unique run identifier for logging"]
+    as_of: Annotated[str, "UTC timestamp when the run started"]
+    versions: Annotated[dict[str, Any], "Version bundle for router/schema/provider/preprocessor"]
+    security_master: Annotated[dict[str, Any], "Security master snapshot for ticker"]
+    asset_type: Annotated[str, "Asset type classification result"]
+    domain_category: Annotated[str, "Domain category classification result"]
+    analysis_schema_id: Annotated[str, "Selected analysis schema id"]
+    analysis_schema: Annotated[dict[str, Any], "Selected analysis schema object"]
+    classification_evidence: Annotated[list[dict[str, Any]], "Evidence used for category routing"]
+    classification_candidates: Annotated[list[dict[str, Any]], "Top-k domain candidates"]
+    news_bundle: Annotated[dict[str, Any], "Preprocessed news bundle (company/macro cards)"]
 
     sender: Annotated[str, "Agent that sent this message"]
     user_profile: Annotated[str, "User's investment profile and preferences"]

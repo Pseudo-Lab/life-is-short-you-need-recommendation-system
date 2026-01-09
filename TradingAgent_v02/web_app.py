@@ -115,6 +115,23 @@ async def websocket_endpoint(websocket: WebSocket):
         mode_msg = "⚡ Quick Mode (Speed/Cost)" if analysis_mode == "quick" else "🧠 Deep Mode (Precision)"
         await websocket.send_json({"type": "log", "message": f"Initializing analysis for {ticker} on {date_str} [{mode_msg}]..."})
 
+        # Pre-phase logs (highlight in UI: level=error to render red if supported)
+        await websocket.send_json({
+            "type": "log",
+            "level": "error",
+            "message": "[PHASE] Category Routing & Schema Injection (분류/스키마 주입)"
+        })
+        await websocket.send_json({
+            "type": "log",
+            "level": "error",
+            "message": "[PHASE] News Fetch + Preprocess (뉴스 수집/전처리)"
+        })
+        await websocket.send_json({
+            "type": "log",
+            "level": "error",
+            "message": "[PHASE] Analysts consume routed schema & weighted news (분석 가중 반영)"
+        })
+
         # --- Callback Definition ---
         from langchain_core.callbacks import BaseCallbackHandler
         from langchain_core.outputs import LLMResult
@@ -217,6 +234,22 @@ async def websocket_endpoint(websocket: WebSocket):
                 await websocket.send_json({"type": "log", "message": f"\n[System] Starting analysis for {target_ticker}..."})
                 print(f"DEBUG: Invoking graph for {target_ticker}")
                 final_state = await target_ta.graph.ainvoke(init_state, run_config)
+
+                # Highlight classification focus (red/error level for UI emphasis)
+                focus_asset = final_state.get("asset_type", "")
+                focus_domain = final_state.get("domain_category", "")
+                focus_schema = final_state.get("analysis_schema_id", "")
+                focus_conf = final_state.get("classification_candidates", [])
+                topk = final_state.get("classification_candidates", []) or []
+                topk_str = ", ".join([f"{c.get('domain_category','')}:{c.get('score','')}" for c in topk[:3]])
+                bundle = final_state.get("news_bundle", {}) or {}
+                c_cnt = len(bundle.get("company_news", []) or [])
+                m_cnt = len(bundle.get("macro_news", []) or [])
+                await websocket.send_json({
+                    "type": "log",
+                    "level": "error",
+                    "message": f"🔥 [CATEGORY FOCUS] asset={focus_asset} | domain={focus_domain} | schema={focus_schema} | topk=({topk_str}) | news company/macro={c_cnt}/{m_cnt}"
+                })
                 
                 # Process Result
                 raw_decision = final_state.get("final_trade_decision", "HOLD")
