@@ -111,6 +111,7 @@ def route_category(
     asset_type = (security_master.asset_type_hint or taxonomy.get("asset_type_fallback") or "Equity").strip()
 
     evidence: list[ClassificationEvidence] = []
+    domain: str = "Others"  # 안전한 기본값
 
     # 1) deterministic ticker override
     overrides = taxonomy.get("ticker_domain_overrides", {}) or {}
@@ -232,27 +233,57 @@ def route_category(
             scores[domain] = score
 
     if not scores:
-        # 4) Others fallback + reason
-        evidence.append(
-            ClassificationEvidence(
-                source="router",
-                field="fallback",
-                rule="no_match",
-                matched_text="No deterministic/taxonomy/text match; fallback to Others",
-                ts=now,
+        # 4) Corpus-based fallback: 도메인 전체 키워드로 넓게 매칭 시도
+        corpus_parts: list[str] = []
+        if security_master.business_description:
+            corpus_parts.append(security_master.business_description.lower())
+        if news_texts:
+            corpus_parts.extend([t.lower() for t in news_texts if t])
+        corpus = " ".join(corpus_parts)
+
+        fallback_scores: dict[str, float] = {}
+        for dom, cfg in domain_cfg.items():
+            if dom == "Others":
+                continue
+            kw_list = cfg.get("keywords") or []
+            hit = sum(1 for kw in kw_list if kw and kw.lower() in corpus)
+            if hit > 0:
+                sc = min(0.4, hit * 0.05)  # 간단 가중치
+                fallback_scores[dom] = sc
+                evidence.append(
+                    ClassificationEvidence(
+                        source="fallback_corpus",
+                        field="business_description+news",
+                        rule=f"keywords_hit:{hit}",
+                        matched_text=f"{dom} hits={hit}",
+                        ts=now,
+                    )
+                )
+
+        if fallback_scores:
+            scores.update(fallback_scores)
+        else:
+            # 5) Others fallback + reason
+            evidence.append(
+                ClassificationEvidence(
+                    source="router",
+                    field="fallback",
+                    rule="no_match",
+                    matched_text="No deterministic/taxonomy/text match; fallback to Others",
+                    ts=now,
+                )
             )
-        )
-        domain = "Others"
-        schema_id = _domain_to_schema_id(domain=domain, analysis_schema=analysis_schema)
-        return CategoryRoutingResult(
-            asset_type=asset_type,
-            domain_category=domain,
-            confidence=0.2,
-            candidates_topk=[{"domain_category": "Others", "score": 0.2}],
-            evidence=[e.__dict__ for e in evidence],
-            version=version,
-            analysis_schema_id=schema_id,
-        )
+            domain = "Others"
+            schema_id = _domain_to_schema_id(domain=domain, analysis_schema=analysis_schema)
+            return CategoryRoutingResult(
+                asset_type=asset_type,
+                domain_category=domain,
+                confidence=0.2,
+                candidates_topk=[{"domain_category": "Others", "score": 0.2}],
+                evidence=[e.__dict__ for e in evidence],
+                version=version,
+                analysis_schema_id=schema_id,
+            )
 
     ranked = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
     domain = ranked[0][0]

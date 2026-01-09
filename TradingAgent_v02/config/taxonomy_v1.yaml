@@ -25,8 +25,25 @@ domain_categories:
     tickers: [XOM, CVX, COP, EOG]
     keywords: [oil, gas, upstream, e&p, drilling, production, opec, brent, wti]
   SaaS:
-    tickers: [CRM, NOW, SNOW, ADBE]
-    keywords: [saas, subscription, arr, nrr, seat, cloud, enterprise software]
+    tickers: [CRM, NOW, SNOW, ADBE, AAPL]
+    keywords:
+      [
+        saas,
+        subscription,
+        arr,
+        nrr,
+        seat,
+        cloud,
+        enterprise software,
+        iphone,
+        ios,
+        mac,
+        app store,
+        services,
+        wearables,
+        device,
+        consumer electronics,
+      ]
   Biotech:
     tickers: [MRNA, REGN, VRTX, BNTX]
     keywords: [fda, trial, phase, clinical, pdufa, approval, biotech]
@@ -68,3 +85,4 @@ ticker_domain_overrides:
   XOM: Energy_EP
   CRM: SaaS
   MRNA: Biotech
+  AAPL: SaaS

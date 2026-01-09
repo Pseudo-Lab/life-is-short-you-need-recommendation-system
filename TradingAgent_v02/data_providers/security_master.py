@@ -40,6 +40,7 @@ def get_security_master(ticker: str) -> SecurityMaster:
         "XOM": ("NYSE", "Exxon Mobil", "oil gas upstream production capex opec"),
         "CRM": ("NYSE", "Salesforce", "saas subscription cloud enterprise arr nrr"),
         "MRNA": ("NASDAQ", "Moderna", "biotech clinical trial fda phase pdufa"),
+        "AAPL": ("NASDAQ", "Apple Inc.", "consumer electronics hardware iphone mac services app store wearables"),
     }
 
     exchange, name, desc = mock.get(t, ("UNKNOWN", t, ""))

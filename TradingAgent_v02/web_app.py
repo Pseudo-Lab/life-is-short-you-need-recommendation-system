@@ -229,6 +229,38 @@ async def websocket_endpoint(websocket: WebSocket):
                 # Load Profile
                 current_profile = profile_manager.load_profile()
                 init_state = target_ta.propagator.create_initial_state(target_ticker, target_date, current_profile.summary)
+
+                # Pre-graph focus log (category/schema/news bundle) - use both log+progress for UI highlighting
+                def _fmt_topk(cands):
+                    return ", ".join(
+                        [f"{c.get('domain_category','')}:{c.get('score','')}" for c in (cands or [])][:3]
+                    )
+
+                topk_str = _fmt_topk(init_state.get("classification_candidates", []))
+                c_cnt = len((init_state.get("news_bundle") or {}).get("company_news", []) or [])
+                m_cnt = len((init_state.get("news_bundle") or {}).get("macro_news", []) or [])
+                evidence_list = init_state.get("classification_evidence", []) or []
+                evidence_list = evidence_list if isinstance(evidence_list, list) else []
+                ev_pretty = []
+                for ev in evidence_list[:8]:
+                    src = ev.get("source", "")
+                    rule = ev.get("rule", "")
+                    matched = ev.get("matched_text", "")
+                    ev_pretty.append(f"{src}:{rule} => {matched}")
+                ev_msg = "; ".join(ev_pretty) if ev_pretty else "no evidence (fallback to Others)"
+                focus_msg = (
+                    f"🔥 [CATEGORY FOCUS] asset={init_state.get('asset_type','')} "
+                    f"| domain={init_state.get('domain_category','')} "
+                    f"| schema={init_state.get('analysis_schema_id','')} "
+                    f"| topk=({topk_str}) | news company/macro={c_cnt}/{m_cnt}"
+                )
+                await websocket.send_json({"type": "log", "level": "error", "message": focus_msg})
+                await websocket.send_json({"type": "progress", "step": focus_msg})
+                await websocket.send_json({
+                    "type": "log",
+                    "level": "error",
+                    "message": f"[CATEGORY EVIDENCE] {ev_msg}"
+                })
                 
                 # Run
                 await websocket.send_json({"type": "log", "message": f"\n[System] Starting analysis for {target_ticker}..."})
@@ -250,6 +282,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     "level": "error",
                     "message": f"🔥 [CATEGORY FOCUS] asset={focus_asset} | domain={focus_domain} | schema={focus_schema} | topk=({topk_str}) | news company/macro={c_cnt}/{m_cnt}"
                 })
+                await websocket.send_json({"type": "progress", "step": f"[CATEGORY FOCUS] {focus_domain} ({focus_schema})"})
                 
                 # Process Result
                 raw_decision = final_state.get("final_trade_decision", "HOLD")
@@ -382,4 +415,4 @@ def calculate_accuracy(ticker: str, date_str: str, decision: str) -> dict:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("web_app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("web_app:app", host="0.0.0.0", port=5000, reload=True)
